@@ -25,6 +25,11 @@ app.get('/', (req, res) => {
     res.json(["Tony","Lisa","Michael","Ginger","Food"]);
     // console.log(process.env.SECRET_KEY, 'process.env.SECRET_KEY');
 })
+webPush.setVapidDetails(
+  'mailto:example@yourdomain.org',
+  process.env.PUBLIC_VAPID_KEY,
+  process.env.PRIVATE_VAPID_KEY
+);
 
 app.post('/subscribe', (req, res) => {
   const subscription = req.body;
@@ -32,6 +37,7 @@ app.post('/subscribe', (req, res) => {
   const payload = JSON.stringify({ title: 'test', body:'body body' });
 
   console.log(subscription);
+
 
   webPush.sendNotification(subscription, payload).catch(error => {
     console.error(error.stack);
