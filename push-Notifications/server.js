@@ -1,8 +1,8 @@
-const webPush = require('web-push');
+// const webPush = require('web-push');
 
 // Replace with your own VAPID keys
-const vapidKeys = webPush.generateVAPIDKeys();
-console.log(vapidKeys);
+// const vapidKeys = webPush.generateVAPIDKeys();
+// console.log(vapidKeys);
 // webPush.setVapidDetails(
 //   'mailto:example@yourdomain.org',
 //   vapidKeys.publicKey,
