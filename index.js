@@ -10,6 +10,8 @@ const port = process.env.PORT || 3000;
 
 // console.log(process.env.PORT) 
 app.use(express.json());
+
+// body-parser is a piece of express middleware that reads a form's input and stores it as a javascript object accessible through req.body.
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(cors());
